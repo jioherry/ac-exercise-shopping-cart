@@ -12,6 +12,10 @@
   <p class="alert"><%= alert %></p>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render "common/navbar" %>
+      <%= yield %>
+    </div>
+    <%= render "common/footer" %>
   </body>
 </html>
