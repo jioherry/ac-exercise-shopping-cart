@@ -97,3 +97,978 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 56ms (Views: 52.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-04-07 10:38:15 +0800
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.5ms)
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170405135114)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170405135114"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToUsers (20170405135330)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "profile_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170405135330"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProfiles (20170405135804)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" varchar, "address" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170405135804"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-07 02:38:38 UTC], ["updated_at", 2017-04-07 02:38:38 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2017-04-07 10:41:36 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered common/_navbar.html.erb (0.6ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 1783ms (Views: 1771.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnUserIdToProfile (20170407024353)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "profile" ADD "user_id" integer[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnUserIdToProfile (20170407024353)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "profiles" ADD "user_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170407024353"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveColumnWithUserId (20170407024815)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar, "profile_id" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","profile_id")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name","profile_id" FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","name" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170407024815"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20170407031623)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "file_location" varchar, "cart_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170407031623"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-07 11:39:32 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+  Rendered common/_navbar.html.erb (0.5ms)
+  Rendered common/_footer.html.erb (0.6ms)
+Completed 200 OK in 244ms (Views: 235.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCarts (20170407034013)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170407034013"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnPriceToProduct (20170407034911)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" ADD "price" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170407034911"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Tavares Fritsch DVM"], ["description", "Corrupti quia et asperiores dolores quo."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "5430"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Damon Koepp"], ["description", "Placeat sequi qui neque temporibus incidunt non."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "8079"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Vidal Larson"], ["description", "Sequi sapiente nihil dicta fuga molestias omnis id."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "2147"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Abbie Monahan"], ["description", "Sed magni quam quidem voluptas."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "4812"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Carey Powlowski"], ["description", "At veritatis voluptates."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "4548"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dr. Lily Gleason"], ["description", "Facere totam est."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "345"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Demond Hirthe"], ["description", "Atque cumque qui maxime quia magnam."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "7769"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Isabell Quitzon"], ["description", "Consectetur repellendus autem sit libero voluptas est ratione."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "9264"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chandler Rowe"], ["description", "Sit maiores voluptatibus et ut fugit."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "8503"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jeff Hudson"], ["description", "Excepturi illum enim ab facilis."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "3988"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Yazmin Pfeffer"], ["description", "Inventore repellat reprehenderit impedit."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "7067"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Myrl Spencer"], ["description", "Officiis ut est sunt nobis."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "5594"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Tyrell Turner Jr."], ["description", "Earum iusto itaque et."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "2629"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Anika MacGyver"], ["description", "Omnis dolor est eum."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "9081"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Callie Pacocha"], ["description", "Doloribus dolorem facilis officiis accusamus voluptates."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "6475"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lavinia Rau"], ["description", "Dicta illum ipsam quis."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "6016"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Dandre Cartwright"], ["description", "Sunt cumque ipsa harum iste expedita optio."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "7004"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Bernard Cummings"], ["description", "Aliquam et voluptatem."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "1590"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Luigi Wehner"], ["description", "Molestias mollitia magnam quos tempore magni voluptates accusamus."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "4804"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Judy Reynolds"], ["description", "Necessitatibus sequi omnis quis."], ["file_location", "https://robohash.org/my-own-slug.jpg?size=50x50&set=set1"], ["created_at", 2017-04-07 04:11:35 UTC], ["updated_at", 2017-04-07 04:11:35 UTC], ["price", "6500"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2017-04-07 12:11:39 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCartItems (20170407061452)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170407061452"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2017-04-07 14:46:44 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.3ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 14:46:46 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 14:52:50 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (6.6ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 30.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:35:27 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:36:33 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:36:37 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:36:40 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (4.1ms)
+  Rendered common/_navbar.html.erb (0.5ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:36:40 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:37:02 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:37:27 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+  Rendered common/_navbar.html.erb (0.6ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:37:42 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:38:03 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.3ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:38:40 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ena Keeling"], ["description", "Ex earum molestiae."], ["file_location", "https://robohash.org/delenitinullamolestiae.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "3908"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kayla Botsford"], ["description", "Repudiandae nihil commodi odio temporibus et ut autem."], ["file_location", "https://robohash.org/sedipsamoptio.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "3201"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Maye Bahringer"], ["description", "Consequatur dolores nam."], ["file_location", "https://robohash.org/estatquesunt.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "7052"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jairo Bergnaum II"], ["description", "Et exercitationem omnis qui est et magnam enim."], ["file_location", "https://robohash.org/earumveritatisut.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "4624"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Royal Schuppe"], ["description", "Cumque odio aut quia nulla."], ["file_location", "https://robohash.org/etinvel.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "4806"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Alexandro Schimmel"], ["description", "Ut aut distinctio quia."], ["file_location", "https://robohash.org/sintsintconsectetur.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "1502"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Xzavier Schiller"], ["description", "Unde accusamus corrupti dolorem."], ["file_location", "https://robohash.org/corruptiiureaut.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "5009"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dolores Grady II"], ["description", "Itaque excepturi omnis enim harum."], ["file_location", "https://robohash.org/voluptatequiaeius.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "6963"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Marvin Kemmer"], ["description", "Aspernatur qui debitis."], ["file_location", "https://robohash.org/auteumqui.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "959"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Leslie Kunze"], ["description", "Esse temporibus dignissimos quam."], ["file_location", "https://robohash.org/estfacerevoluptate.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "8837"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nelda Crona"], ["description", "Perferendis corporis et."], ["file_location", "https://robohash.org/inetpossimus.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "7272"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Adela Pacocha IV"], ["description", "Qui fuga occaecati repudiandae minus quisquam dolor neque."], ["file_location", "https://robohash.org/quiaquammolestiae.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "9981"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Ardith Fahey"], ["description", "Est enim mollitia nam vel illo sunt beatae."], ["file_location", "https://robohash.org/ametconsequunturin.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "1988"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Aimee Halvorson"], ["description", "Nobis laboriosam et asperiores ea ullam repellendus."], ["file_location", "https://robohash.org/eacupiditatelaborum.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "8019"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Kayli Kessler"], ["description", "Quia enim est."], ["file_location", "https://robohash.org/voluptateofficiarerum.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "501"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Iva Lueilwitz"], ["description", "Est maiores doloremque eius sed dolores."], ["file_location", "https://robohash.org/dolorenimnon.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "4863"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kiana Marvin"], ["description", "Fuga omnis iure doloribus eaque voluptatem magnam."], ["file_location", "https://robohash.org/nequenostrumporro.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "8244"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Aniyah Terry"], ["description", "Culpa a necessitatibus."], ["file_location", "https://robohash.org/hicsapienteillum.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "2805"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Roberto Feeney"], ["description", "Perspiciatis molestiae ipsam."], ["file_location", "https://robohash.org/explicabonondignissimos.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "8073"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "file_location", "created_at", "updated_at", "price") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dudley Kunze"], ["description", "Molestiae est perferendis reiciendis aliquam repellendus error unde."], ["file_location", "https://robohash.org/veritatisseddolor.png?size=300x300&set=set1"], ["created_at", 2017-04-07 07:49:01 UTC], ["updated_at", 2017-04-07 07:49:01 UTC], ["price", "5149"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2017-04-07 15:49:29 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (10.9ms)
+  Rendered common/_navbar.html.erb (0.7ms)
+  Rendered common/_footer.html.erb (0.3ms)
+Completed 200 OK in 267ms (Views: 249.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 15:50:11 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected ':', expecting ')'
+e_tag(product.file_location) :withd => 50px );@output_buffer
+                              ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected ':', expecting ')'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.9ms)
+Started GET "/" for ::1 at 2017-04-07 15:50:56 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected ':', expecting ')'
+e_tag(product.file_location) :withd => 50 );@output_buffer.s
+                              ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected ':', expecting ')'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.2ms)
+Started GET "/" for ::1 at 2017-04-07 15:51:22 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected ':', expecting ')'
+e_tag(product.file_location) :width => 50px );@output_buffer
+                              ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected ':', expecting ')'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.5ms)
+Started GET "/" for ::1 at 2017-04-07 16:02:01 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:02:33 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected ',', expecting ')'
+ge_tag(product.file_location), width: 50px );@output_buffer.
+                              ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected ',', expecting ')'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.2ms)
+Started GET "/" for ::1 at 2017-04-07 16:02:54 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected ',', expecting ')'
+ge_tag(product.file_location), :width => 50px );@output_buff
+                              ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected ',', expecting ')'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.6ms)
+Started GET "/" for ::1 at 2017-04-07 16:08:09 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+location, :padding => 50*50 px) );@output_buffer.safe_append
+                              ^
+/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/welcome/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.3ms)
+Started GET "/" for ::1 at 2017-04-07 16:08:35 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+ile_location, :width => 100 px) );@output_buffer.safe_append
+                              ^
+/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/welcome/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.0ms)
+Started GET "/" for ::1 at 2017-04-07 16:08:49 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+file_location, :width => 100px) );@output_buffer.safe_append
+                              ^
+/Users/ray/Desktop/program/ac-exercise-shopping-cart/app/views/welcome/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/welcome/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/welcome/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.6ms)
+Started GET "/" for ::1 at 2017-04-07 16:36:18 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (4.4ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:36:46 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:37:12 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (5.0ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:37:29 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:37:48 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:39:33 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+  Rendered common/_navbar.html.erb (0.3ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:40:19 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.7ms)
+  Rendered common/_navbar.html.erb (0.4ms)
+  Rendered common/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-07 16:40:45 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `price' for nil:NilClass):
+     7: 				<div class="col-xs-6 col-md-3">
+     8: 					<P><%= image_tag(product.file_location, :width => 50) %></P>
+     9: 					<p><%= link_to product.name %></p>
+    10: 					<p><%= $product.price %></p>
+    11: 				</div>
+    12: 				<% end %>
+    13: 		</div>
+  
+app/views/welcome/index.html.erb:10:in `block in _app_views_welcome_index_html_erb___2470102088755978614_70161909358260'
+app/views/welcome/index.html.erb:6:in `_app_views_welcome_index_html_erb___2470102088755978614_70161909358260'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.9ms)
+Started GET "/" for ::1 at 2017-04-07 16:41:09 +0800
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+  Rendered common/_navbar.html.erb (0.5ms)
+  Rendered common/_footer.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.2ms)
+
+
