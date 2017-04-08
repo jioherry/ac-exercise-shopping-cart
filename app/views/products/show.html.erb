@@ -1,0 +1,7 @@
+<h1><%= @product.name %></h1>
+
+<%= image_tag(@product.file_location) %>
+
+上架時間: <%= @product.created_at %>
+
+<%= simple_format @product.description %>

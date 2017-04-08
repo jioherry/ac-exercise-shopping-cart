@@ -1,0 +1,37 @@
+<h1>公仔達人</h1>
+
+<section id="my_cart">
+	<strong>
+		購物車內有 <%= current_cart.total_quantity %> 件商品，總共 <%= current_cart.total %> 元
+	</strong>
+	<table>
+		<tr>
+			<th>商品</th>
+			<th>數量</th>
+			<th>單價</th>
+			<th>小計</th>
+		</tr>
+		<% current_cart.cart_items.each do |item| %>
+		<tr>
+			<td><%= cart_items.product.name %></td>
+			<td><%= cart_items.quantity %></td>
+			<td><%= cart_items.product.price %></td>
+			<td><%= cart_items.subtotal %></td>
+		</tr>
+		<% end %>	
+	</table>
+</section>
+
+<div class="container">	
+	<div class="row">
+		<% @product.each do |product| %>
+			<div class="col-xs-6 col-md-3">
+				<P><%= image_tag(product.file_location, :width => 50) %></P>
+				<p><%= link_to product.name, product_path(product) %></p>
+				<p>$<%= product.price %>
+						<%= link_to '+', add_to_cart_product_path(product) %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
+

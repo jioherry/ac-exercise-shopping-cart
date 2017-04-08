@@ -1,7 +1,27 @@
 class Cart < ApplicationRecord
 
-	has_mant :cart_items
+	has_many :cart_items, dependent: :destroy
 	has_many :products, through: :cart_items
+
+	def add_cart_item(product)
+    existing_item = self.cart_items.find_by( product_id: product )
+    if existing_item
+      existing_item.quantity += 1
+      existing_item.save!
+    else
+      cart_item = cart_items.build( :product_id => product.id, :quantity => 1  )
+      cart_item.save!
+    end
+    self.cart_items
+  end
+
+  def total
+    self.cart_items.to_a.sum{ |x| x.subtotal }
+  end
+
+  def total_quantity
+    cart_items.map{ |x| x.quantity }.sum
+  end
 
 
 end
