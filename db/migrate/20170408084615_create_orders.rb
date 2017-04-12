@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
 
     	t.integer :user_id
     	t.string :name
-    	t.string :phone_number
+    	t.string :phone
     	t.string :address
     	t.string :email
 

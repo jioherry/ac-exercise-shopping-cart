@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  # before_action :authenticate_user!
+  # Visitor 在這裡第一次登入，成為 Customer
 
   def new
     @order = current_user.orders.build(email: current_user.email)
@@ -12,10 +14,12 @@ class OrdersController < ApplicationController
     @order = current_user.orders.build(order_params)
     @order.add_order_items(current_cart)
     @order.amount = current_cart.total
+    @order.init_status
 
     if @order.save
       current_cart.destroy
       redirect_to order_path(@order), notice: '已結帳！'
+      UserMailer.notify_order_create(@order).deliver_now!
     else
       render :new
     end
@@ -23,8 +27,9 @@ class OrdersController < ApplicationController
 
   protected
 
-	  def order_params
-	    params.require(:order).permit(:name, :email, :phone, :address, :payment_method)
-	  end
+  def order_params
+    params.require(:order).permit(:name, :email, :phone, :address, :payment_method)
+  end
 
 end
+

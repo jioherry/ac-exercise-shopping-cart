@@ -16,11 +16,15 @@ class Cart < ApplicationRecord
   end
 
   def total
-    self.cart_items.to_a.sum{ |x| x.subtotal }
+    cart_items.map{ |x| x.subtotal }.sum
   end
 
   def total_quantity
     cart_items.map{ |x| x.quantity }.sum
+  end
+
+  def find_item_by(product)
+    self.cart_items.where(product_id: product).first
   end
 
 

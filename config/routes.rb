@@ -9,5 +9,13 @@ Rails.application.routes.draw do
 		end
 	end
 
+	resource :carts
+	resources :orders
+
+	namespace :admin do
+		root 'orders#index'
+		resources :products
+		resources :orders
+	end
 
 end
