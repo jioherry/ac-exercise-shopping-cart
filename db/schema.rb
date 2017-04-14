@@ -10,13 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170406043825) do
 
   create_table "carts", force: :cascade do |t|
+=======
+ActiveRecord::Schema.define(version: 20170409055633) do
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "cart_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "quantity"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.string   "product_id"
+>>>>>>> book
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
@@ -25,6 +41,41 @@ ActiveRecord::Schema.define(version: 20170406043825) do
     t.integer  "qty"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+=======
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "price"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "email"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "amount"
+    t.integer  "payment_method"
+    t.integer  "order_status",   default: 0
+    t.integer  "payment_status"
+    t.index ["order_status"], name: "index_orders_on_order_status"
+    t.index ["payment_status"], name: "index_orders_on_payment_status"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "file_location"
+    t.integer  "cart_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "price",         default: 0
+>>>>>>> book
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -34,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170406043825) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,7 +102,6 @@ ActiveRecord::Schema.define(version: 20170406043825) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.integer  "profile_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
