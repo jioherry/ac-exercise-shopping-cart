@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+<<<<<<< HEAD
+=======
 
   validates_presence_of :name, :price, :in_stock_qty
 
@@ -8,4 +10,5 @@ class Product < ApplicationRecord
   has_many :order_items, dependent: :destroy
   has_many :orders, through: :order_items
 
+>>>>>>> book
 end

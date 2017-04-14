@@ -1,4 +1,6 @@
 class Cart < ApplicationRecord
+<<<<<<< HEAD
+=======
 
 	has_many :cart_items, dependent: :destroy
 	has_many :products, through: :cart_items
@@ -28,4 +30,5 @@ class Cart < ApplicationRecord
   end
 
 
+>>>>>>> book
 end

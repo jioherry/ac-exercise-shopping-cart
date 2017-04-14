@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+<<<<<<< HEAD
+end
+=======
 
   def index
     @products = Product.all
@@ -20,3 +23,4 @@ class ProductsController < ApplicationController
   end
 
 end
+>>>>>>> book
