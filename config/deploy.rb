@@ -30,7 +30,7 @@ lock "3.8.0"
 # set :keep_releases, 5
 
 `ssh-add` # 注意這是鍵盤左上角的「 `」不是單引號「 '」
-set :application, 'CART'
+set :application, 'ray_cart'
 
 set :repo_url, 'https://github.com/jioherry/ac-exercise-shopping-cart.git'
 set :deploy_to, '/home/ray/rails-exercise'
